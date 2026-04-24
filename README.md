@@ -77,6 +77,9 @@ int SSCMA::invoke(int times, bool filter, bool show)
 ```
 
 - On Arduino IDE, click menu "Tools" -> "Board: " -> "Board Manager..." -> "WIZnet W55RP20-EVB-Pico"
+- On Arduino IDE, click menu "Tools" -> "Debug Port" -> "Serial"
+- On Arduino IDE, click menu "Tools" -> "CPU Speed" -> "133 MHz"
+- On Arduino IDE, click menu "Tools" -> "Operation System" -> "FreeRTOS SMP"
 - On Arduino IDE, click menu "Sketch" -> "Verify/Compile"  
 If everything goes smoothly, you should see the following screen.
 [![screen-build](./assets/screen-build.png)](https://github.com/teamprof/w55rp20-smart-doorbell/blob/main/assets/screen-build.png)
@@ -101,17 +104,18 @@ If everything goes smoothly, you should see the following screen.
 ### Test firmware
 - Launch "Serial Monitor" on Arduino IDE, press "RESET" button on the board, you should see the following screen.
 [![screen-boot](./assets/screen-boot.png)](https://github.com/teamprof/w55rp20-smart-doorbell/blob/main/assets/screen-boot.png)
+- OLED display as below  
+[![oled-boot](./assets/oled-boot.png)](https://github.com/teamprof/w55rp20-smart-doorbell/blob/main/assets/oled-boot.png)
 
-- Connect an Ethernet cable between the board and router, you should see the following screen once Etheret is up and NTP is success
-[![screen-ntp](./assets/screen-eth-up.png)](https://github.com/teamprof/w55rp20-smart-doorbell/blob/main/assets/screen-eth-up.png)
+- Connect an Ethernet cable between the board and router, you should see the following OLED display once Etheret is up and NTP is success
+- OLED display as below  
+[![oled-ntp](./assets/oled-ntp.png)](https://github.com/teamprof/w55rp20-smart-doorbell/blob/main/assets/oled-ntp.png)
 
 - show a "cat" image in front of the camera. an alert message "Tenant identified" should be received on WhatsApp app couple seconds later   
 [![ws-tenant](./assets/ws-tenant.jpg)](https://github.com/teamprof/w55rp20-smart-doorbell/blob/main/assets/ws-tenant.jpg)
 
 - show a "dog" image in front of the camera. an alert message "Stranger detected" should be received on WhatsApp app  
 [![ws-stranger](./assets/ws-stranger.jpg)](https://github.com/teamprof/w55rp20-smart-doorbell/blob/main/assets/ws-stranger.jpg)
-
-
 
 
 ## Software flow
@@ -135,8 +139,6 @@ sequenceDiagram
 ```
 
 
-
-
 ---
 ## Video demo
 [![video](./assets/video.jpg)](https://youtube.com/shorts/XstmU_ju-Ic)  
@@ -147,8 +149,6 @@ Video demo is available on [video](https://youtube.com/shorts/XstmU_ju-Ic)
 00:48	WhatsApp received "tenant identified" message  
 01:04	put a "dog" image in front of the camera  
 01:22	WhatsApp received "stranger detected" message  
-
-
 
 
 
