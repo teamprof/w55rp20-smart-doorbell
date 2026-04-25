@@ -49,9 +49,9 @@ The W55RP20 smart doorbell proof-of-concept integrates the W55RP20-Arduino platf
 https://sensecraft.seeed.cc/ai/view-model/60084-pet-detection
 2. Install [Arduino IDE v2.3.6+ for Arduino](https://www.arduino.cc/en/Main/Software) on PC
 3. Install [ArduProf v2.2.4+, by teamprof](https://github.com/teamprof/arduprof) on Arduino IDE
-4. Install [Seeed Arduino SSCMA v1.0.4+, by Seeed Studio](https://github.com/Seeed-Studio/Seeed_Arduino_SSCMA) on Arduino IDE  
-note v1.0.3 does not work. A pull-request is submitted on 19 Apr 2026. 
-if v1.0.4. is not available, please modify Seeed_Arduino_SSCMA.cpp by yourself
+4. Install [Seeed Arduino SSCMA, by Seeed Studio](https://github.com/Seeed-Studio/Seeed_Arduino_SSCMA) on Arduino IDE  
+note v1.0.3 does NOT work. A pull-request is submitted on 19 Apr 2026. 
+Please modify Seeed_Arduino_SSCMA.cpp by yourself, before the pull-request is accepted
 ```
 int SSCMA::invoke(int times, bool filter, bool show)
 {
@@ -64,6 +64,7 @@ int SSCMA::invoke(int times, bool filter, bool show)
 }
 
 ```
+note: a cloned Seeed_Arduino_SSCMA is available at https://github.com/teamprof/Seeed_Arduino_SSCMA which will be removed after it accepted the pull-request. 
 
 ## Steps to run
 ### Build firmware
@@ -107,11 +108,12 @@ If everything goes smoothly, you should see the following screen.
 - OLED display as below  
 [![oled-boot](./assets/oled-boot.png)](https://github.com/teamprof/w55rp20-smart-doorbell/blob/main/assets/oled-boot.png)
 
-- Connect an Ethernet cable between the board and router, you should see the following OLED display once Etheret is up and NTP is success
-- OLED display as below  
+- Connect an Ethernet cable between the board and router, you should see the following OLED display once Etheret is up and NTP is success  
 [![oled-ntp](./assets/oled-ntp.png)](https://github.com/teamprof/w55rp20-smart-doorbell/blob/main/assets/oled-ntp.png)
 
-- show a "cat" image in front of the camera. an alert message "Tenant identified" should be received on WhatsApp app couple seconds later   
+- show a "cat" image in front of the camera. OLED should display as below  
+[![oled-cat](./assets/oled-cat.png)](https://github.com/teamprof/w55rp20-smart-doorbell/blob/main/assets/oled-cat.png)  
+  an alert message "Tenant identified" should be received on WhatsApp app couple seconds later   
 [![ws-tenant](./assets/ws-tenant.jpg)](https://github.com/teamprof/w55rp20-smart-doorbell/blob/main/assets/ws-tenant.jpg)
 
 - show a "dog" image in front of the camera. an alert message "Stranger detected" should be received on WhatsApp app  
